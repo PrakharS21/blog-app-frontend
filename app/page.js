@@ -30,7 +30,7 @@ export default function Home() {
 
     setSubmitting(true);
     try {
-      const res = await fetch("http://localhost:5000/api/posts", {
+      const res = await fetch("https://blog-app-backend-174c.onrender.com/api/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newPost),
@@ -52,7 +52,7 @@ export default function Home() {
     if (!confirmDelete) return;
 
     try {
-      await fetch(`http://localhost:5000/api/posts/${id}`, {
+      await fetch(`https://blog-app-backend-174c.onrender.com/api/posts${id}`, {
         method: "DELETE",
       });
 
