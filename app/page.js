@@ -1,4 +1,4 @@
-"use client"; // Next.js App Router ke liye
+"use client"; //  for Next.js App Router
 
 import { useEffect, useState } from "react";
 
@@ -9,18 +9,19 @@ export default function Home() {
   const [submitting, setSubmitting] = useState(false);
 
   // Fetch all posts from backend
-  useEffect(() => {
-    fetch("http://localhost:5000/api/posts")
-      .then((res) => res.json())
-      .then((data) => {
-        setPosts(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching posts:", err);
-        setLoading(false);
-      });
-  }, []);
+ useEffect(() => {
+  fetch("https://blog-app-backend-174c.onrender.com/api/posts")
+    .then((res) => res.json())
+    .then((data) => {
+      setPosts(data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error("Error fetching posts:", err);
+      setLoading(false);
+    });
+}, []);
+
 
   // Add Post
   const handleSubmit = async (e) => {
